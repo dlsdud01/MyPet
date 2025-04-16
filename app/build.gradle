@@ -28,13 +28,22 @@ android {
 }
 
 dependencies {
-    // MQTT
+
+    // ✅ MQTT
     implementation 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.5'
     implementation 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
 
+    // MJPEG 라이브러리 - v 빼고!
+    dependencies {
+        implementation 'com.github.dlsdud01:MyPet:Tag'
+    }
+
+    // ✅ androidx 대응 필수
+    implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.1.0'
+
     // 안드로이드 UI 관련 안정 버전들
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'com.google.android.material:materi  al:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
     // 테스트 관련
@@ -42,3 +51,5 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }
+
+

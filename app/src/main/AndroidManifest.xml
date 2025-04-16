@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mypet">
-
     <!-- MQTT 통신을 위한 인터넷 권한 추가 -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -12,20 +13,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyPet">
-
-        <!-- MQTT 서비스 등록 -->
-        <service android:name="org.eclipse.paho.android.service.MqttService" />
-
-        <!-- 앱 메인 액티비티 등록 -->
         <activity
-            android:name="com.example.mypet.MainActivity"
+            android:name=".CamActivity"
+            android:exported="true" />
+        <!-- MQTT 서비스 등록 -->
+        <service android:name="org.eclipse.paho.android.service.MqttService" /> <!-- 앱 메인 액티비티 등록 -->
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
+
 
 </manifest>

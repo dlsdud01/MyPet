@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
+import android.content.Intent;
+import android.view.View;
+import androidx.cardview.widget.CardView;
 
 import org.eclipse.paho.android.service.MqttAndroidClient;
 import org.eclipse.paho.client.mqttv3.IMqttActionListener;
@@ -32,9 +35,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // TextView UI 요소 연결
+        // 기존 온습도 TextView 연결
         textTemperature = findViewById(R.id.textTemperature);
         textHumidity = findViewById(R.id.textHumidity);
+
+        // 👇 CardView 가져오기
+        CardView camCard = findViewById(R.id.cam);
+
+        // 👇 클릭 리스너 설정
+        camCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 👇 CamActivity로 전환
+                Intent intent = new Intent(MainActivity.this, CamActivity.class);
+                startActivity(intent);
+            }
+        });
 
         // MQTT 클라이언트 초기화
         mqttAndroidClient = new MqttAndroidClient(getApplicationContext(), serverUri, clientId);
