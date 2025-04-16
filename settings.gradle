@@ -3,7 +3,7 @@ pluginManagement {
         gradlePluginPortal()
         google()
         mavenCentral()
-        maven { url 'https://jitpack.io' } // ✅ 여기
+        maven { url 'https://jitpack.io' }
     }
 }
 
@@ -12,9 +12,10 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        maven { url 'https://jitpack.io' } // ✅ 여기도
+        maven { url 'https://jitpack.io' }
     }
 }
 
 rootProject.name = "MyPet"
 include ':app'
+include ':library' // ✅ 여기에만 넣는 거야
