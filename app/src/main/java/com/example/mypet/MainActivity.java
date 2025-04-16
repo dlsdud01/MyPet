@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 // 👇 CamActivity로 전환
                 Intent intent = new Intent(MainActivity.this, CamActivity.class);
                 startActivity(intent);
+                Log.d("CARD_CLICK", "camCard clicked!");
             }
         });
 

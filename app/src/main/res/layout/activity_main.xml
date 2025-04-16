@@ -71,6 +71,8 @@
         android:id="@+id/cam"
         android:layout_width="160dp"
         android:layout_height="161dp"
+        android:clickable="true"
+        android:focusable="true"
         android:layout_marginTop="20dp"
         app:cardBackgroundColor="#FA6E5A"
         app:cardCornerRadius="12dp"
