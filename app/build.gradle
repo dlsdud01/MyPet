@@ -30,26 +30,23 @@ android {
 }
 
 dependencies {
-
-    // ✅ MQTT
-    implementation 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.5'
+    // ✅ MQTT (공식 또는 내 fork, 둘 중 하나만 남겨도 됨)
+    //implementation 'com.github.dlsdud01:paho.mqtt.android:1.0.2'
+    // 아래 라인은 만약 내 fork에서 모든 기능/수정 다 지원하면 삭제해도 됨
     implementation 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
+    implementation 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.5'
 
-    // MJPEG 라이브러리 - v 빼고!
-    implementation 'com.github.dlsdud01:ipcam-view:2.4.5'
 
-    // ✅ androidx 대응 필수
-    implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.1.0'
-
-    // 안드로이드 UI 관련 안정 버전들
+    // ✅ 필수 UI
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
-    // 테스트 관련
+    // ✅ androidx LocalBroadcastManager
+    implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.1.0'
+
+    // ✅ 테스트
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }
-
-

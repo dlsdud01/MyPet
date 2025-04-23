@@ -4,11 +4,90 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/main_bg"
     tools:context=".CamActivity">
 
-    <com.github.niqdev.mjpeg.MjpegView
-        android:id="@+id/mjpegView"
+    <!-- 상단 여백 -->
+    <Space
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="170dp" />
+
+    <!-- 상단 텍스트뷰 -->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="34dp"
+        android:layout_marginLeft="24dp"
+        android:background="@drawable/rounded_bg_cam"
+        android:paddingLeft="18dp"
+        android:paddingTop="8dp"
+        android:paddingRight="18dp"
+        android:paddingBottom="8dp"
+        android:text="Now Playing (CAM1)"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <!-- WebView 300x300, 가운데 정렬 -->
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"/>
+
+    <!-- 버튼 영역 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="24dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <Button
+            android:id="@+id/Cam1"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_bg_button"
+            android:backgroundTint="@null"
+            android:text="Cam1"
+            android:textColor="#FA6E5A"
+            android:textStyle="bold"
+            android:layout_marginRight="10dp"
+            android:layout_marginEnd="10dp"/>
+
+        <Button
+            android:id="@+id/Cam2"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_bg_button"
+            android:backgroundTint="@null"
+            android:text="Cam2"
+            android:textColor="#FA6E5A"
+            android:textStyle="bold"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"/>
+
+        <Button
+            android:id="@+id/Cam3"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_bg_button"
+            android:backgroundTint="@null"
+            android:text="Cam3"
+            android:textColor="#FA6E5A"
+            android:textStyle="bold" />
+    </LinearLayout>
 
 </LinearLayout>
